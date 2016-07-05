@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/reName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="강종혁"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/reNaesun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="511"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/reNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="010-5503-3471"
+        android:gravity="center"
+        android:textSize="25dp"/>
+</LinearLayout>
