@@ -89,13 +89,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_add) {
-            DialogFragment_Add dialog = new DialogFragment_Add();
-            dialog.show(getSupportFragmentManager(), "dialog");
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 

@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private ItemData[] itemsData;
+    private ArrayList<ItemData> arrayData;
 
-    public MyAdapter(ItemData[] itemsData){
-        this.itemsData = itemsData;
+    public MyAdapter(ArrayList<ItemData> itemsData){
+        this.arrayData = itemsData;
     }
-    
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_view, null);
@@ -28,9 +28,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.reName.setText(itemsData[position].getName());
-        holder.reNaesun.setText(itemsData[position].getNaesun());
-        holder.reNumber.setText(itemsData[position].getNumber());
+        holder.reName.setText(arrayData.get(position).getName());
+        holder.reNaesun.setText(arrayData.get(position).getNaesun());
+        holder.reNumber.setText(arrayData.get(position).getNumber().substring(0,3)+"-"+
+                                arrayData.get(position).getNumber().substring(3,7)+"-"+
+                                arrayData.get(position).getNumber().substring(7,11));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,6 +48,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return itemsData.length ;
+        return arrayData.size() ;
     }
 }

@@ -24,20 +24,22 @@ import android.widget.EditText;
  */
 public class DialogFragment_Add extends DialogFragment{
     private EditText editName, editNaesun, editNumber;
+    private OnAddListener callback;
 
-//    // Activity로 데이터를 전달할 커스텀 리스너
-//    public RegisterDialogListener callback;
-//
-//    // Activity로 데이터를 전달할 커스텀 리스너의 인터페이스
-//    public interface RegisterDialogListener {
-//        void onRegisterDialogListener(String name, String naesun, String number);
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        callback = (RegisterDialogListener) context;
-//    }
+    public interface OnAddListener {
+        public void onAddSubmit(String name, String naesun, String number);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        try {
+            callback = (OnAddListener) getTargetFragment();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Calling Fragment must implement OnAddFriendListener");
+        }
+
+    }
 
     @Nullable
     @Override
@@ -61,18 +63,11 @@ public class DialogFragment_Add extends DialogFragment{
         builder.setView(view).setPositiveButton("등록", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-//                // Activity로 데이터를 전달할 커스텀 리스너를 연결
-////               callback = (RegisterDialogListener)getActivity();
-////                callback = new RegisterDialogListener() {
-////                    @Override
-////                    public void onRegisterDialogListener(String name, String naesun, String number) {
-//                        callback.onRegisterDialogListener(
-//                                editName.getText().toString(),
-//                                editNaesun.getText().toString(),
-//                                editNumber.getText().toString());
-//
-////                    }
-////                };
+                final String mName = editName.getText().toString();
+                final String mNaesun = editNaesun.getText().toString();
+                final String mNumber = editNumber.getText().toString();
+
+                callback.onAddSubmit(mName, mNaesun, mNumber);
             }
         }).setNegativeButton("취소",null);
 

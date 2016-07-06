@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/reName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="강종혁"
-        android:gravity="center"
-        android:textSize="25dp"/>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp">
 
-    <TextView
-        android:id="@+id/reNaesun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="511"
-        android:gravity="center"
-        android:textSize="25dp"/>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
 
-    <TextView
-        android:id="@+id/reNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="010-5503-3471"
-        android:gravity="center"
-        android:textSize="25dp"/>
+            <TextView
+                android:id="@+id/reName"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="강종혁"
+                android:textColor="@color/colorAccent"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/reNaesun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/reName"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="511"
+                android:textColor="@color/colorAccent"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/reNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/reNaesun"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="010-5503-3471"
+                android:textColor="@color/colorAccent"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>
