@@ -24,11 +24,13 @@ import java.util.ArrayList;
  * Created by kangjonghyuk on 2016. 7. 4..
  */
 public class Fragment_phone extends Fragment implements DialogFragment_Add.OnAddListener{
+
     RecyclerView recyclerView;
     ArrayList<ItemData> arrayData;
     ItemData[] itemsData;
     MyAdapter mAdapter;
     FloatingActionButton fab;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +42,7 @@ public class Fragment_phone extends Fragment implements DialogFragment_Add.OnAdd
         View view = inflater.inflate(R.layout.fragment_phone, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-
         arrayData = new ArrayList<>();
-
         itemsData = new ItemData[]{};
 
         for(int i=0; i<itemsData.length;i++){
@@ -56,6 +56,7 @@ public class Fragment_phone extends Fragment implements DialogFragment_Add.OnAdd
 
         fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 FragmentManager fm = getActivity().getSupportFragmentManager();

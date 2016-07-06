@@ -27,7 +27,7 @@ public class DialogFragment_Add extends DialogFragment{
     private OnAddListener callback;
 
     public interface OnAddListener {
-        public void onAddSubmit(String name, String naesun, String number);
+        void onAddSubmit(String name, String naesun, String number);
     }
 
     @Override
